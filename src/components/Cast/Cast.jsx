@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 
 function Cast() {
     const { movieId } = useParams();
-    console.log(movieId);
+    console.log('Cast: ', movieId);
 
     return (
         <>

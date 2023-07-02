@@ -1,20 +1,35 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import GoBack from 'components/GoBack/GoBack';
+import { useRef } from 'react';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
-    const movieId = useParams();
-    // console.log(movieId);
+    const paramsUrl = useParams();
+    // console.log(paramsUrl);
+    const { movieId } = paramsUrl;
+    // const pathBack = {location.state.from ?? '/movies};
+
+    const location = useLocation();
+    console.log('location', location);
+    const pathBackLocationRef = useRef(location.state?.from ?? '/movies');
+    console.log(pathBackLocationRef);
     return (
         <>
             <h2>MoviesDetails</h2>
-            <div>{movieId.movieId}</div>
+            <GoBack
+                pathBack={pathBackLocationRef.current}
+                // to={location.state.from}
+            >
+                Back
+            </GoBack>
+            <div>{movieId}</div>
             <div>
                 <h3>Additional information</h3>
                 <ul>
                     <Link to="cast">
-                        <li>Cast for {movieId.movieId}</li>
+                        <li>Cast for {movieId}</li>
                     </Link>
                     <Link to="reviews">
-                        <li>Reviews for {movieId.movieId}</li>
+                        <li>Reviews for {movieId}</li>
                     </Link>
                 </ul>
                 <Outlet />

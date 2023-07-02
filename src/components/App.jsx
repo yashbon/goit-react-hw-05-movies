@@ -18,7 +18,8 @@ export const App = () => {
                 color: '#010101',
             }}
         >
-            <h1 style={{ textAlign: 'center' }}>Movies</h1>
+            {/* <h1 style={{ textAlign: 'center' }}>Movies</h1> */}
+
             <Routes>
                 <Route path="/" element={<Leyout />}>
                     <Route index element={<Home />} />

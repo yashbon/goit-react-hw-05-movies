@@ -2,7 +2,8 @@ import { useParams } from 'react-router-dom';
 
 function Reviews() {
     const { movieId } = useParams();
-    console.log(movieId);
+    console.log('Reviews: ', movieId);
+    console.log(useParams());
 
     return (
         <>

@@ -1,16 +1,20 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { MenuNavLink, Header } from './Leyput.styled';
+// import styled from 'styled-components';
 
 const Leyout = () => {
     return (
-        <div>
-            <nav>
-                <NavLink to={'/'}>Home</NavLink>
-                <NavLink to={'/movies'}>Movies</NavLink>
-            </nav>
+        <>
+            <Header>
+                <nav>
+                    <MenuNavLink to={'/'}>Home</MenuNavLink>
+                    <MenuNavLink to={'/movies'}>Movies</MenuNavLink>
+                </nav>
+            </Header>
             <main>
                 <Outlet />
             </main>
-        </div>
+        </>
     );
 };
 
