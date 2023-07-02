@@ -1,5 +1,5 @@
 import GoBack from 'components/GoBack/GoBack';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
@@ -9,9 +9,9 @@ const MovieDetails = () => {
     // const pathBack = {location.state.from ?? '/movies};
 
     const location = useLocation();
-    console.log('location', location);
+    // console.log('location', location);
     const pathBackLocationRef = useRef(location.state?.from ?? '/movies');
-    console.log(pathBackLocationRef);
+    // console.log(pathBackLocationRef);
     return (
         <>
             <h2>MoviesDetails</h2>
@@ -32,7 +32,9 @@ const MovieDetails = () => {
                         <li>Reviews for {movieId}</li>
                     </Link>
                 </ul>
-                <Outlet />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Outlet />
+                </Suspense>
             </div>
         </>
     );

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
-function Reviews() {
+export const Reviews = () => {
     const { movieId } = useParams();
-    console.log('Reviews: ', movieId);
-    console.log(useParams());
+    // console.log('Reviews: ', movieId);
+    // console.log(useParams());
 
     return (
         <>
@@ -11,6 +11,6 @@ function Reviews() {
             <p>{movieId}</p>
         </>
     );
-}
+};
 
-export default Reviews;
+// export { Reviews };

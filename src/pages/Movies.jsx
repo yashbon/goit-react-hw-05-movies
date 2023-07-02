@@ -5,7 +5,7 @@ function Movies() {
     const movies = ['movie-1', 'movie-2', 'movie-3'];
 
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
 
     return (
         <>
