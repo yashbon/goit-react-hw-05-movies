@@ -7,7 +7,7 @@ const GoBack = props => {
     // console.log('pathBack: ', pathBack);
 
     return (
-        <Link to={props.to}>
+        <Link to={pathBack}>
             {/* <HiArrowLeft size="18" /> */}
             {/* <span>back</span> */}
             {children}

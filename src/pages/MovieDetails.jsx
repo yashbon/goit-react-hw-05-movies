@@ -29,8 +29,8 @@ const MovieDetails = () => {
         <>
             <h2>MoviesDetails</h2>
             <GoBack
-                // pathBack={pathBackLocationRef.current}
-                to={pathBackLocationRef.current}
+                pathBack={pathBackLocationRef.current}
+                // to={pathBackLocationRef.current}
             >
                 Back
             </GoBack>
