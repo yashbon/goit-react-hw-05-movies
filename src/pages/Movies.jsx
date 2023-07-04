@@ -7,8 +7,6 @@ function Movies() {
     const [searchMovies, setSerchMovies] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
-    const location = useLocation();
-    console.log(location);
 
     // const [page, setPage] = useState(1); ?????????????????
 
@@ -37,6 +35,9 @@ function Movies() {
             setSerchMovies([...response.results]);
         });
     }, [searchParams]);
+
+    const location = useLocation();
+    console.log('location', location);
 
     return (
         <>

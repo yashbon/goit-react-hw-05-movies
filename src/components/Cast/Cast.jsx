@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 function Cast() {
     const [cast, setCast] = useState([]);
     const { movieId } = useParams();
-    // console.log('Cast: ', movieId);
 
     //fetch
     useEffect(() => {
@@ -15,14 +14,11 @@ function Cast() {
             }
             setCast([...response.cast]);
         });
-        // console.log(cast);
     }, [movieId]);
 
     return (
         <>
             <h4>Cast</h4>
-            {/* <p>{movieId}</p> */}
-
             <ul>
                 {cast.map(person => (
                     <li key={person.id}>

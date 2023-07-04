@@ -3,10 +3,7 @@
 import { Link } from 'react-router-dom';
 const GoBack = props => {
     // console.log('props: ', props);
-    const {
-        // pathBack,
-        children,
-    } = props;
+    const { pathBack, children } = props;
     // console.log('pathBack: ', pathBack);
 
     return (

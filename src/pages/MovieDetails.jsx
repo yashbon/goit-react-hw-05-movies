@@ -1,11 +1,6 @@
 import GoBack from 'components/GoBack/GoBack';
 import { getMovieDetails } from 'components/services/fetchMovies';
-import {
-    Suspense,
-    useEffect,
-    // useRef,
-    useState,
-} from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
@@ -26,16 +21,16 @@ const MovieDetails = () => {
     //******************************************************************************** */
 
     const location = useLocation();
-    // const pathBackLocationRef = useRef(location.state?.from ?? '/movies');
-
     console.log(location);
 
+    const pathBackLocationRef = useRef(location.state?.from ?? '/movies');
+    console.log('path back >>', pathBackLocationRef);
     return (
         <>
             <h2>MoviesDetails</h2>
             <GoBack
-            // pathBack={pathBackLocationRef.current}
-            // to={location.state.from}
+                // pathBack={pathBackLocationRef.current}
+                to={pathBackLocationRef.current}
             >
                 Back
             </GoBack>
