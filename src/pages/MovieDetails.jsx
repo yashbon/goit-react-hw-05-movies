@@ -21,10 +21,10 @@ const MovieDetails = () => {
     //******************************************************************************** */
 
     const location = useLocation();
-    console.log(location);
+    // console.log(location);
 
     const pathBackLocationRef = useRef(location.state?.from ?? '/movies');
-    console.log('path back >>', pathBackLocationRef);
+    // console.log('path back >>', pathBackLocationRef);
     return (
         <>
             <h2>MoviesDetails</h2>

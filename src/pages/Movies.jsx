@@ -37,7 +37,7 @@ function Movies() {
     }, [searchParams]);
 
     const location = useLocation();
-    console.log('location', location);
+    // console.log('location', location);
 
     return (
         <>
