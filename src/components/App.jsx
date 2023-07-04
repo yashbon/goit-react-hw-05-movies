@@ -14,7 +14,7 @@ const Movies = lazy(() => import('../pages/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails'));
 
 // import { Reviews } from './Reviews/Reviews';
-// for example:
+// for example ones option:
 const Reviews = lazy(() =>
     import('./Reviews/Reviews').then(module => ({
         ...module,
@@ -45,7 +45,6 @@ export const App = () => {
                         <Route path="reviews" element={<Reviews />} />
                     </Route>
                     {/* <Route path="*" element={<NotFound />} /> */}
-                    {/* <Route path="*" element={<>NotFound </>} /> */}
                 </Route>
             </Routes>
         </div>

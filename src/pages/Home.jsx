@@ -1,4 +1,4 @@
-import { getMovies } from 'components/services/fetchMovies';
+import { getTrendingMovies } from 'components/services/fetchMovies';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -6,22 +6,27 @@ function Home() {
     const [trendingMovies, setTrendingMovies] = useState([]);
     const location = useLocation();
     useEffect(() => {
-        getMovies().then(async response => {
+        getTrendingMovies().then(response => {
+            if (!response) {
+                return;
+            }
+            // console.log(response.results);
             setTrendingMovies([...response.results]);
         });
     }, []);
 
     return (
         <>
-            <h1>Home</h1>
+            {/* <h1>Home</h1> */}
+            <h2>Trending today</h2>
             <ul>
-                {trendingMovies.map(item => (
-                    <li key={item.id}>
+                {trendingMovies.map(movie => (
+                    <li key={movie.id}>
                         <Link
-                            to={`movies/${item.id}`}
+                            to={`movies/${movie.id}`}
                             state={{ from: location }}
                         >
-                            {item.id}
+                            {movie.original_title}
                         </Link>
                     </li>
                 ))}
