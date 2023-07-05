@@ -34,7 +34,15 @@ const MovieDetails = () => {
             >
                 Back
             </GoBack>
-            <div>
+            <div
+                style={{
+                    display: 'flex',
+                    gap: '15px',
+                    // justifyContent: 'center',
+                    // alignItems: 'center',
+                    // fontSize: 40,
+                }}
+            >
                 <img
                     src={'https://image.tmdb.org/t/p/w300'.concat(
                         movieDetails.poster_path

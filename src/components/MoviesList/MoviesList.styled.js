@@ -8,6 +8,6 @@ export const ListMovies = styled.ul`
 export const ListMoviesItem = styled.li`
 `;
 
-export const LinkList = styled(Link)`
+export const LinkMovie = styled(Link)`
     text-decoration: none;
 `
