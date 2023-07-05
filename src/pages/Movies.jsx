@@ -1,7 +1,8 @@
+import MoviesList from 'components/MoviesList/MoviesList';
 import SearchBar from 'components/SearchBar/SearchBar';
 import { getMovieByQuery } from 'components/services/fetchMovies';
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 
 function Movies() {
     const [searchMovies, setSerchMovies] = useState([]);
@@ -48,15 +49,16 @@ function Movies() {
                 onSubmit={handleSubmit}
             />
             {searchMovies.length > 0 && (
-                <ul>
-                    {searchMovies.map(movie => (
-                        <li key={movie.id}>
-                            <Link to={`${movie.id}`} state={{ from: location }}>
-                                {movie.original_title}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                <MoviesList movies={searchMovies} />
+                // <ul>
+                //     {searchMovies.map(movie => (
+                //         <li key={movie.id}>
+                //             <Link to={`${movie.id}`} state={{ from: location }}>
+                //                 {movie.original_title}
+                //             </Link>
+                //         </li>
+                //     ))}
+                // </ul>
             )}
         </>
     );

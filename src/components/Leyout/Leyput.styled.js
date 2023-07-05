@@ -20,6 +20,7 @@ export const Navigation = styled.nav`
 
 export const MainContent = styled.main`
   padding-top: 50px;
+  padding-left: 20px;
   `;
 
 export const MenuNavLink = styled(NavLink)`
