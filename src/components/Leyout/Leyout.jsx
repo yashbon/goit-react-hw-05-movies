@@ -1,22 +1,22 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { MenuNavLink, Header } from './Leyput.styled';
+import { MenuNavLink, Header, Navigation, MainContent } from './Leyput.styled';
 // import styled from 'styled-components';
 
 const Leyout = () => {
     return (
         <>
             <Header>
-                <nav>
+                <Navigation>
                     <MenuNavLink to={'/'}>Home</MenuNavLink>
                     <MenuNavLink to={'/movies'}>Movies</MenuNavLink>
-                </nav>
+                </Navigation>
             </Header>
-            <main>
+            <MainContent>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Outlet />
                 </Suspense>
-            </main>
+            </MainContent>
         </>
     );
 };
