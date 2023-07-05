@@ -1,4 +1,4 @@
-import MoviesList from 'components/MoviesList/MoviesList';
+// import MoviesList from 'components/MoviesList/MoviesList';
 import SearchBar from 'components/SearchBar/SearchBar';
 import { getMovieByQuery } from 'components/services/fetchMovies';
 import { useEffect, useState } from 'react';
