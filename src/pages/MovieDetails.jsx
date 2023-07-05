@@ -40,7 +40,6 @@ const MovieDetails = () => {
                     gap: '15px',
                     // justifyContent: 'center',
                     // alignItems: 'center',
-                    // fontSize: 40,
                 }}
             >
                 <img
