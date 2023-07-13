@@ -1,7 +1,9 @@
 import MoviesList from 'components/MoviesList/MoviesList';
 import { getTrendingMovies } from 'components/services/fetchMovies';
 import { useEffect, useState } from 'react';
-// import { Link, useLocation } from 'react-router-dom';
+// import // Link,
+// // useLocation,
+// 'react-router-dom';
 
 function Home() {
     const [trendingMovies, setTrendingMovies] = useState([]);
@@ -20,7 +22,10 @@ function Home() {
         <>
             {/* <h1>Home</h1> */}
             <h2>Trending today</h2>
-            <MoviesList movies={trendingMovies} />
+            <MoviesList
+                movies={trendingMovies}
+                //  state={{ from: location }}
+            />
             {/* <ul>
                 {trendingMovies.map(movie => (
                     <li key={movie.id}>
