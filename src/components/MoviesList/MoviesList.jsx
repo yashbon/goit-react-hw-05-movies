@@ -1,7 +1,13 @@
 import { useLocation } from 'react-router-dom';
 import { ListMovies, ListMoviesItem, LinkMovie } from './MoviesList.styled';
 
-const MoviesList = ({ movies }) => {
+const MoviesList = props => {
+    // console.log(props);
+    const {
+        movies,
+        // state
+    } = props;
+    // console.log(state);
     const location = useLocation();
     return (
         <ListMovies>
@@ -10,6 +16,7 @@ const MoviesList = ({ movies }) => {
                     <LinkMovie
                         to={`/movies/${movie.id}`}
                         state={{ from: location }}
+                        // state={state}
                     >
                         {movie.original_title}
                     </LinkMovie>
